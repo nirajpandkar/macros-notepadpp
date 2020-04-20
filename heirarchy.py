@@ -17,14 +17,13 @@ def modify(text):
                 if re.findall(r"#", inv_text[j]) and len(re.findall(r"#", inv_text[j])) < n_hashes:
                     n_hashes = len(re.findall(r"#", inv_text[j]))
                     loc[j] += 1
-                    print(inv_text[j])
 
 
     finaltext = ""
     for i in range(len(text)-1, -1, -1):
         modline = ""
         if loc[i]:
-            modline = "[] " + text[::-1][i]
+            modline = text[::-1][i] + " []"
         else:
             modline = text[::-1][i]
         finaltext += modline + "\n"
